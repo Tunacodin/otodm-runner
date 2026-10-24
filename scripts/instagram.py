@@ -473,7 +473,8 @@ def yorum(a):
 OTODM = KLASOR / "otodm.json"
 OTODM_DURUM = KLASOR / "otodm_durum.json"
 OTODM_LOG = KLASOR / "otodm.log"
-CTA_DESEN = re.compile(r"yorum(?:lar)?a\s+([^\s,.!:;✅]+)\s+yaz", re.I)
+# keyword may be quoted in the caption: Yoruma “konsept” yaz
+CTA_DESEN = re.compile(r"yorum(?:lar)?a\s+[\"'“”‘’«»]?([^\s,.!:;✅\"'“”‘’«»]+)[\"'“”‘’«»]?\s+yaz", re.I)
 
 
 def _kucuk(s):
